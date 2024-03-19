@@ -48,13 +48,13 @@ function FlatListExample(): React.JSX.Element {
             />
             <View style={styles.footer}>
                 <TouchableOpacity>
-                    <Image source={require('./assets/imagens/home.png')} style={styles.footer} />
+                    <Image source={require('./assets/imagens/home.png')} style={styles.footerIcon} />
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <Image source={require('./assets/imagens/profile.png')} style={styles.footer} />
+                    <Image source={require('./assets/imagens/profile.png')} style={styles.footerIcon} />
                 </TouchableOpacity>
                 <TouchableOpacity>
-                    <Image source={require('./assets/imagens/orders.png')} style={styles.footer} />
+                    <Image source={require('./assets/imagens/orders.png')} style={styles.footerIcon}/>
                 </TouchableOpacity>
 
             </View>
@@ -70,7 +70,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'yellow',
         padding: 20,
         marginVertical: 8,
-        marginHorizontal: 16
+        marginHorizontal: 16,
+        borderRadius: 15
     },
     header: {
         backgroundColor: 'orange',
@@ -84,6 +85,16 @@ const styles = StyleSheet.create({
         color: 'white'
     },
     footer: {
+        borderTopWidth: 0.2,
+        backgroundColor: 'white',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        paddingVertical: 10
+    },
+    footerIcon: {
+        width: 30,
+        height: 30
 
     }
 });
