@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, StatusBar } from "react-native";
 
 interface Item {
     id: string;
@@ -12,22 +12,36 @@ const dados: Item[] = [
     { id: '1', nome: 'Aparecida', idade: '77', email: 'aparecida@gmail.com' },
     { id: '2', nome: 'Maria', idade: '22', email: 'maria@gmail.com' },
     { id: '3', nome: 'João', idade: '90', email: 'joao@gmail.com' },
+    { id: '4', nome: 'Aparecida', idade: '77', email: 'aparecida@gmail.com' },
+    { id: '5', nome: 'Maria', idade: '22', email: 'maria@gmail.com' },
+    { id: '6', nome: 'João', idade: '90', email: 'joao@gmail.com' },
+    { id: '7', nome: 'Aparecida', idade: '77', email: 'aparecida@gmail.com' },
+    { id: '8', nome: 'Maria', idade: '22', email: 'maria@gmail.com' },
+    { id: '9', nome: 'João', idade: '90', email: 'joao@gmail.com' },
+    { id: '10', nome: 'Aparecida', idade: '77', email: 'aparecida@gmail.com' },
+    { id: '11', nome: 'Maria', idade: '22', email: 'maria@gmail.com' },
+    { id: '12', nome: 'João', idade: '90', email: 'joao@gmail.com' },
 
 ];
 
 const renderItem = ({ item }: { item: Item }) => (
-    <View style={styles.item}>
+    <TouchableOpacity style={styles.item}>
         <Text>{item.nome}</Text>
         <Text>{item.email}</Text>
         <Text>{item.idade}</Text>
-    </View>
+    </TouchableOpacity>
 );
 
 
 function FlatListExample(): React.JSX.Element {
     return (
-        <View>
+        <View style={styles.container}>
+            <StatusBar backgroundColor='blue' barStyle='light-content'/>
+            <View style={styles.header}>
+                <Text style={styles.headerText}>Flat List</Text>
+            </View>
             <FlatList
+            showsVerticalScrollIndicator={false}
             data={dados}
             renderItem={renderItem}
             keyExtractor={(item) => item.id}
@@ -38,7 +52,6 @@ function FlatListExample(): React.JSX.Element {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: 30
 
     },
     item: {
@@ -46,6 +59,18 @@ const styles = StyleSheet.create({
         padding: 20,
         marginVertical: 8,
         marginHorizontal: 16
+    },
+    header: {
+        backgroundColor: 'green',
+        alignItems: 'center',
+        paddingVertical: 10
+
+    },
+    headerText: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: 'white'
+        
 
     }
 });
