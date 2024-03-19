@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, StatusBar } from "react-native";
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, StatusBar, Image} from "react-native";
 
 interface Item {
     id: string;
@@ -46,6 +46,18 @@ function FlatListExample(): React.JSX.Element {
             renderItem={renderItem}
             keyExtractor={(item) => item.id}
             />
+            <View style={styles.footer}>
+                <TouchableOpacity>
+                    <Image />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Image />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Image />
+                </TouchableOpacity>
+
+            </View>
         </View>
     );
 }
@@ -61,7 +73,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 16
     },
     header: {
-        backgroundColor: 'green',
+        backgroundColor: 'orange',
         alignItems: 'center',
         paddingVertical: 10
 
@@ -70,7 +82,8 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         color: 'white'
-        
+    }, 
+    footer: {
 
     }
 });
