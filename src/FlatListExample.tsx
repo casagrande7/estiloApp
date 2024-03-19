@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 
 interface Item {
     id: string;
@@ -14,6 +14,14 @@ const dados: Item[] = [
     {id: '3', nome: 'João' , idade: '90' , email: 'joao@gmail.com'},
 
 ];
+
+const renderItem = ({ item }: { item: Item}) => {
+    <View>
+        <Text>{item.nome}</Text>
+        <Text>{item.email}</Text>
+        <Text>{item.idade}</Text>
+    </View>
+};
 
 
 function FlatListExample(): React.JSX.Element {
